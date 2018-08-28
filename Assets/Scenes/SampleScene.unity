@@ -201,14 +201,14 @@ MonoBehaviour:
   - {fileID: 1408317201}
   - {fileID: 1096649762}
   text:
+  - {fileID: 603524896}
+  - {fileID: 1618208150}
+  - {fileID: 2137732558}
   - {fileID: 1290191552}
   - {fileID: 954554783}
-  - {fileID: 2137732558}
   - {fileID: 194611720}
-  - {fileID: 1618208150}
   - {fileID: 1321185328}
   - {fileID: 1839739432}
-  - {fileID: 603524896}
 --- !u!1 &194611718
 GameObject:
   m_ObjectHideFlags: 0

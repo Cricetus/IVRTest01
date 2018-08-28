@@ -10,13 +10,13 @@ public class Controller : MonoBehaviour {
         for (int i = 0; i < container.Length; i++) { 
             Debug.Log(container[i].name);
             
-            text[i].text = container[i].name;
+            
         }      
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+       
     }
    public void SelectSort() {
         Debug.Log("\n");
@@ -28,7 +28,7 @@ public class Controller : MonoBehaviour {
                 {
                     Debug.Log(string.Format("{0} compare with {1}", container[j].name, container[min].name));
                     Swap(container[j], container[i]);
-                    SwapT(text[j], text[i]);
+                    
                 }
                 
             }
@@ -37,19 +37,20 @@ public class Controller : MonoBehaviour {
         foreach (GameObject item in container) {
             Debug.Log(item.name);
         }
+        SwapT();
+
     }
-    void SwapT(TextMesh c,TextMesh x) {
-        string nm;
-       
-        string text;
+    void SwapT() {
 
-        nm = c.name;
-        c.name = x.name;
-        x.name = nm;
-
-        text = c.text;
-        c.text = x.text;
-        x.text = text;
+        for (int i = 0; i < text.Length; i++) {
+            Debug.Log("T|C:::" + text[i].name + container[i].name);
+            text[i].name = container[i].name;
+            Debug.Log("T|C:::" + text[i].text + container[i].name);
+            text[i].text = container[i].name;
+        }
+        for (int i = 0; i < text.Length; i++) { Debug.Log("Контейнер:"+text[i].name + "/" + text[i].text); }
+        for (int i = 0; i < text.Length; i++) { Debug.Log(text[i].name + "/" + text[i].text); }
+        
     }
     void Swap(GameObject a, GameObject b) {
         string name;
@@ -59,10 +60,6 @@ public class Controller : MonoBehaviour {
         name = a.name;
         a.name = b.name;
         b.name = name;
-
-        //position = a.transform.position;
-        //a.transform.position = b.transform.position;
-       // b.transform.position = position;
 
         material = a.GetComponent<MeshRenderer>().material;
         Debug.Log(material);
@@ -75,6 +72,7 @@ public class Controller : MonoBehaviour {
         position = a.transform.position;
         a.transform.position = b.transform.position;
         b.transform.position = position;
+        SwapT();
     }
     void Copy(GameObject a, GameObject b) {
         a.name = b.name;
